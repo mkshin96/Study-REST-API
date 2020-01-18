@@ -1,0 +1,38 @@
+spring:
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  datasource:
+    username : postgres
+    password : mkshin96
+    url : jdbc:postgresql://localhost:5432/whiteship
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        security: DEBUG
+
+my-app:
+  admin-username: admin@gmail.com
+  admin-password: admin
+  user-username: user@gmail.com
+  user-password: user
+  client-id: myApp
+  client-secret: pass
